@@ -1,5 +1,6 @@
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
+const restartBtn = document.querySelector(".restartBtn");
 
 function jump() {
     mario.classList.add("jump");
@@ -26,8 +27,14 @@ const loop = setInterval(() => {
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
 
+        restartBtn.style.display = "flex";
+
         clearInterval(loop);
     }
 }, 10)
+
+function Restart() {
+    window.location.reload(true);
+}
 
 document.addEventListener('keydown', jump);
